@@ -1,0 +1,95 @@
+
+This file lists all the placeholders and customizable items in your portfolio website.
+Please review and update these with your own information.
+
+**In `index.html`:**
+
+1.  **Google Analytics Measurement ID:**
+    *   Near lines 23-28: Replace `GA_MEASUREMENT_ID` (appears twice) with your actual Google Analytics Measurement ID.
+    *   Example: `gtag('config', 'G-XXXXXXXXXX');`
+
+2.  **Canonical URL & Domain:**
+    *   Line 9: Replace `https://your-actual-domain.com/` with your actual domain.
+    *   Line 14: Replace `https://your-actual-domain.com/` with your actual domain.
+    *   Line 55 (JSON-LD script, "url"): Replace `https://your-actual-domain.com/` with your actual domain.
+
+3.  **Open Graph (OG) & Twitter Card Image:**
+    *   Line 15: Replace `https://your-actual-domain.com/assets/images/og-image.jpg` with the correct path to your OG image. Ensure this image is accessible at the specified URL. Create an `assets/images/` folder in your project root if it doesn't exist.
+    *   Line 21: Replace `https://your-actual-domain.com/assets/images/og-image.jpg` with the correct path to your Twitter card image. Ensure this image is accessible.
+
+4.  **Twitter Handles (Optional):**
+    *   Line 22: Uncomment and replace `@yourtwitterhandle` with your Twitter site handle if applicable.
+    *   Line 23: Uncomment and replace `@yourtwitterhandle` with your Twitter creator handle if applicable.
+
+5.  **JSON-LD Schema - Profile Image:**
+    *   Line 61 (JSON-LD script, "image"): Replace `https://your-actual-domain.com/assets/images/profile/profile-photo.jpg` with the correct path to your profile photo for Schema.org. Ensure this image exists (e.g., in `assets/images/profile/`). This path should match the one used in the "About Me" section.
+
+6.  **JSON-LD Schema - Social Media URLs (`sameAs`):**
+    *   Lines 63-67 (JSON-LD script, "sameAs" array): Uncomment and replace the placeholder URLs with your actual social media profile links (e.g., Facebook, Instagram, LinkedIn, GitHub).
+
+7.  **"About Me" Profile Image:**
+    *   Around line 111 (inside `.about-image-placeholder`):
+        *   Replace `src="assets/images/profile/YOUR_PROFILE_IMAGE_FILENAME_PLACEHOLDER.jpg"` with the actual path to your profile image (e.g., `assets/images/profile/nicolas-pimienta.jpg`).
+        *   Create the `assets/images/profile/` directory in your project root and place your image file there.
+        *   The `alt` text is managed by the `profileImageAlt` key in `index.tsx`.
+
+8.  **Client Logos & URLs (in `#clients` section):**
+    *   Around lines 180-200: There are 5 unique client logos. **For the continuous scrolling animation, this entire set of 5 logos is duplicated within the `logo-scroller-inner` div in `index.html`. You only need to manage the image paths and URLs for the first set of 5; the second set is an identical copy.**
+        *   **Apaolaza & Asoc. Logo:**
+            *   Replace `href="#apaolaza-url-placeholder"` with the client's actual website URL.
+            *   The image path is `assets/images/logos/logo-png-apaolaza.png`. Ensure this file exists.
+            *   Alt text is managed by `apaolazaLogoAlt` in `index.tsx`.
+        *   **Mandala Design Logo (or Almadestino):**
+            *   Replace `href="#mandala-url-placeholder"` with the client's actual website URL.
+            *   The image path is `assets/images/logos/almadestino.png`. Ensure this file exists.
+            *   Alt text is managed by `mandalaLogoAlt` in `index.tsx`.
+        *   **Hotel del Solar Logo:**
+            *   Replace `href="#hotel-del-solar-url-placeholder"` with the client's actual website URL.
+            *   Replace `src="assets/images/logos/HOTELDELSOLAR_LOGO_FILENAME_PLACEHOLDER.png"` with the actual path to the Hotel del Solar logo image (e.g., `assets/images/logos/hotel-del-solar-logo.png`).
+            *   Alt text is managed by `hotelDelSolarLogoAlt` in `index.tsx`.
+        *   **Lanza La Bola Deportes Logo:**
+            *   Replace `href="#lanza-la-bola-url-placeholder"` with the client's actual website URL.
+            *   Replace `src="assets/images/logos/LANZALABOLA_LOGO_FILENAME_PLACEHOLDER.png"` with the actual path to the Lanza La Bola Deportes logo image (e.g., `assets/images/logos/lanza-la-bola-logo.png`).
+            *   Alt text is managed by `lanzaLaBolaLogoAlt` in `index.tsx`.
+        *   **365 Pehuajó Logo:**
+            *   Replace `href="#365-pehuajo-url-placeholder"` with the client's actual website URL.
+            *   Replace `src="assets/images/logos/PEHUAJO365_LOGO_FILENAME_PLACEHOLDER.png"` with the actual path to the 365 Pehuajó logo image (e.g., `assets/images/logos/365-pehuajo-logo.png`).
+            *   Alt text is managed by `pehuajo365LogoAlt` in `index.tsx`.
+    *   Create the `assets/images/logos/` directory in your project root and place your logo files there.
+
+9.  **Contact Email Address:**
+    *   Line 207 (Contact Button): Replace `mailto:nicolas.pimienta.dev@example.com` with your actual email address.
+
+10. **Footer Social Media Links:**
+    *   Line 213: Replace `href="#"` for Facebook with your actual Facebook profile URL.
+    *   Line 214: Replace `href="#"` for Instagram with your actual Instagram profile URL.
+
+**In `index.css`:**
+
+1.  **Client Logo Scroller Animation & Dimensions (Advanced Customization):**
+    *   The `.client-logo img` class (around line 410) has `height: 80px;` and `max-width: 200px;`.
+    *   The `.logo-scroller-inner` class (around line 397) has its `width` and `animation` (`@keyframes scrollLogos`) calculated using CSS variables `--client-logo-width` and `--client-logo-gap`. These variables are defined in `:root` and overridden in media queries to adjust the scroller's behavior.
+        *   Default: `--client-logo-width: 180px;`, `--client-logo-gap: 4rem;`
+        *   Animation duration is set to `30s`. You can change this value in `.logo-scroller-inner { animation: scrollLogos 30s linear infinite; }`.
+    *   If you change the number of unique logos from 5, you'll need to update the `5` multiplier in the `width` and `transform` calculations within `.logo-scroller-inner` and `@keyframes scrollLogos`.
+
+**In `index.tsx`:**
+
+1.  **Translations:**
+    *   The copyright year in `footerCopyright` has been updated to 2025.
+    *   The `serviceWebPageTitle` and `serviceWebPageDesc` keys have been updated for the "Web Page or App" service.
+    *   New translation keys `serviceAuthAgentTitle` and `serviceAuthAgentDesc` have been added for the "AI Authorization Agent" service.
+    *   A new translation key `profileImageAlt` has been added for the "About Me" profile picture.
+    *   New translation keys `hotelDelSolarLogoAlt`, `lanzaLaBolaLogoAlt`, and `pehuajo365LogoAlt` have been added for the new client logos.
+    *   Ensure all other translations match your desired content.
+
+2.  **Liquid Glass Effect (Client Section Background):**
+    *   A new function `initLiquidGlassEffect()` has been added to create an animated background for the client logos section. This is a visual enhancement and does not have direct user-configurable placeholders beyond its code.
+
+**General:**
+
+*   **Favicon:** The current favicon is an inline SVG emoji. You might want to replace this with your own custom favicon by linking it in the `<head>` of `index.html`.
+*   **Keywords & Descriptions:** Review all meta descriptions and keywords in `index.html` (lines 7-8, 12, 19) and update them to accurately reflect your profile and services if they differ from the template.
+*   **Language Content:** If you modify the structure or add new text elements that need translation, remember to update the `translations` object in `index.tsx` and add the appropriate `data-translate-key` or `data-translate-key-alt` attributes to your HTML.
+
+```

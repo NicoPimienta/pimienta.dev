@@ -31,13 +31,15 @@ const translations = {
         serviceAuthAgentTitle: "AI Authorization Agent",
         serviceAuthAgentDesc: "We implement intelligent AI agents to automate and enhance security in authorization processes, improving operational efficiency and mitigating critical risks.",
         clientsTitle: "Companies That Trusted Me",
-        apaolazaLogoAlt: "Apaolaza & Asoc. Logo",
-        mandalaLogoAlt: "Mandala Design Logo", // Assuming "almadestino.png" is for Mandala or a similar entity
-        hotelDelSolarLogoAlt: "Hotel del Solar Logo",
-        lanzaLaBolaLogoAlt: "Lanza La Bola Deportes Logo",
-        pehuajo365LogoAlt: "365 Pehuajó Logo",
+        apaolazaLogoAlt: "Apaolaza & Asoc.",
+        mandalaLogoAlt: "Alma Y Destino", 
+        hotelDelSolarLogoAlt: "Hotel Del Solar",
+        lanzaLaBolaLogoAlt: "Lanza la Bola Deportes",
+        pehuajo365LogoAlt: "365 Pehuajó",
         contactTitle: "Interested in collaborating?",
         contactButton: "Get in touch",
+        contactButtonMessengerText: "Write me on Messenger",
+        contactButtonMessengerAria: "Contact me via Facebook Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
         footerCopyright: "© 2025 Nicolás Pimienta. All rights reserved.",
@@ -70,13 +72,15 @@ const translations = {
         serviceAuthAgentTitle: "Agente de Autorización IA",
         serviceAuthAgentDesc: "Implementamos agentes inteligentes de IA para automatizar y fortalecer la seguridad en procesos de autorización, mejorando la eficiencia operativa y mitigando riesgos críticos.",
         clientsTitle: "Empresas que Confiaron en Mí",
-        apaolazaLogoAlt: "Logo Apaolaza & Asoc.",
-        mandalaLogoAlt: "Logo Diseño Mandala", // Asumiendo que "almadestino.png" es para Mandala o una entidad similar
-        hotelDelSolarLogoAlt: "Logo Hotel del Solar",
-        lanzaLaBolaLogoAlt: "Logo Lanza La Bola Deportes",
-        pehuajo365LogoAlt: "Logo 365 Pehuajó",
+        apaolazaLogoAlt: "Apaolaza & Asoc.",
+        mandalaLogoAlt: "Alma Y Destino", 
+        hotelDelSolarLogoAlt: "Hotel Del Solar",
+        lanzaLaBolaLogoAlt: "Lanza la Bola Deportes",
+        pehuajo365LogoAlt: "365 Pehuajó",
         contactTitle: "¿Interesado en colaborar?",
         contactButton: "Ponte en contacto",
+        contactButtonMessengerText: "Escribime por Messenger",
+        contactButtonMessengerAria: "Contactame por Facebook Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
         footerCopyright: "© 2025 Nicolás Pimienta. Todos los derechos reservados.",
@@ -100,8 +104,12 @@ function switchLanguage(lang: Language) {
                 targetSpan.textContent = currentTranslations[key];
             } else if (element.classList.contains('about-role-description')) {
                 element.textContent = currentTranslations[key];
-            } else {
-                element.textContent = currentTranslations[key];
+            } else { // General case for elements like simple spans or buttons directly holding text
+                // Check if the element is a span or if it's okay to set textContent directly
+                // For example, an <a> tag with data-translate-key for its main text
+                 if (element.tagName === 'SPAN' || element.tagName === 'A' || element.tagName === 'P' || element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'BUTTON') {
+                    element.textContent = currentTranslations[key];
+                }
             }
         }
     });

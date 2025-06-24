@@ -13,7 +13,6 @@ const translations = {
         navContact: "Contact",
         langSwitcherENLabel: "Switch to English",
         langSwitcherESLabel: "Switch to Spanish",
-        heroGreeting: "Hello, I am",
         heroSubtitle: "Digital Designer & Developer creating minimalist and impactful experiences.",
         aboutTitle: "About Me",
         aboutMyName: "Nicolás Pimienta",
@@ -34,12 +33,9 @@ const translations = {
         hotelDelSolarLogoAlt: "Hotel Del Solar",
         lanzaLaBolaLogoAlt: "Lanza la Bola Deportes",
         pehuajo365LogoAlt: "365 Pehuajó",
-        contactTitle: "Interested in collaborating?",
+        contactTitle: "Let's build something great.",
         contactButton: "Send me an Email",
-        contactButtonMessengerText: "Write me on Messenger",
-        contactButtonMessengerAria: "Contact me via Facebook Messenger",
-        whatsappFabAriaLabel: "Contact via WhatsApp",
-        whatsappMessage: "Hello, I want information about your services.",
+        messengerFabAriaLabel: "Contact via Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
         footerCopyright: "© 2025 Nicolás Pimienta. All rights reserved.",
@@ -54,7 +50,6 @@ const translations = {
         navContact: "Contacto",
         langSwitcherENLabel: "Cambiar a Inglés",
         langSwitcherESLabel: "Cambiar a Español",
-        heroGreeting: "Hola, soy",
         heroSubtitle: "Diseñador Digital y Desarrollador creando experiencias minimalistas e impactantes.",
         aboutTitle: "Sobre Mí",
         aboutMyName: "Nicolás Pimienta",
@@ -75,12 +70,9 @@ const translations = {
         hotelDelSolarLogoAlt: "Hotel Del Solar",
         lanzaLaBolaLogoAlt: "Lanza la Bola Deportes",
         pehuajo365LogoAlt: "365 Pehuajó",
-        contactTitle: "¿Interesado en colaborar?",
+        contactTitle: "Construyamos algo increíble.",
         contactButton: "Enviame un Email",
-        contactButtonMessengerText: "Escribime por Messenger",
-        contactButtonMessengerAria: "Contactame por Facebook Messenger",
-        whatsappFabAriaLabel: "Contactar por WhatsApp",
-        whatsappMessage: "Hola, quiero información sobre tus servicios.",
+        messengerFabAriaLabel: "Contactar por Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
         footerCopyright: "© 2025 Nicolás Pimienta. Todos los derechos reservados.",
@@ -270,8 +262,12 @@ function initHeroAnimation() {
              camera.updateProjectionMatrix();
         }
     }
-
-    window.addEventListener('resize', onWindowResize, false);
+    
+    let heroResizeDebounceTimer: number;
+    window.addEventListener('resize', () => {
+        clearTimeout(heroResizeDebounceTimer);
+        heroResizeDebounceTimer = window.setTimeout(onWindowResize, 100);
+    }, false);
     onWindowResize(); 
     animate();
 }
@@ -310,7 +306,6 @@ function initParticleBgAnimation() {
         mouse.x = event.clientX;
         mouse.y = event.clientY;
     });
-    // Ensure mouse events are relative to the viewport for fixed canvas
     canvas.addEventListener('mouseleave', () => { 
         mouse.x = undefined;
         mouse.y = undefined;
@@ -352,8 +347,8 @@ function initParticleBgAnimation() {
             this.y += this.speedY;
 
             if (mouse.x !== undefined && mouse.y !== undefined) {
-                const dx = mouse.x - this.x; // Mouse X is viewport X
-                const dy = mouse.y - this.y; // Mouse Y is viewport Y
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < mouse.radius + this.size) { 
                     const forceDirectionX = dx / distance;
@@ -369,8 +364,8 @@ function initParticleBgAnimation() {
         }
     }
 
-    function initParticles() {
-        if (!canvas) return; // Guard against canvas not being found
+    function setupInitialParticles() {
+        if (!canvas) return; 
         particlesArray = [];
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -406,8 +401,6 @@ function initParticleBgAnimation() {
                 }
             }
             if (mouse.x !== undefined && mouse.y !== undefined) {
-                 // Mouse coords are viewport based, particle coords are canvas based.
-                // Since particle canvas is fixed and full screen, they are in the same coordinate system.
                 const dxMouse = particlesArray[a].x - mouse.x;
                 const dyMouse = particlesArray[a].y - mouse.y;
                 const distanceMouse = Math.sqrt(dxMouse*dxMouse + dyMouse*dyMouse);
@@ -417,7 +410,7 @@ function initParticleBgAnimation() {
                     ctx.lineWidth = 0.3;
                     ctx.beginPath();
                     ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(mouse.x, mouse.y); // Draw line to mouse cursor
+                    ctx.lineTo(mouse.x, mouse.y);
                     ctx.stroke();
                 }
             }
@@ -435,11 +428,21 @@ function initParticleBgAnimation() {
         requestAnimationFrame(animateParticles);
     }
 
-    initParticles();
+    setupInitialParticles();
     animateParticles();
 
+    let particleResizeDebounceTimer: number;
+    function handleResizeForParticles() {
+        if (!canvas || !ctx) return;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // Particles will adjust to new boundaries via their update() method's collision detection.
+        // No need to re-create or reposition them manually.
+    }
+
     window.addEventListener('resize', () => {
-        initParticles(); // Re-initialize on resize
+        clearTimeout(particleResizeDebounceTimer);
+        particleResizeDebounceTimer = window.setTimeout(handleResizeForParticles, 150); 
     });
 }
 
@@ -475,10 +478,11 @@ function initLiquidGlassEffect() {
     let blobs: { x: number, y: number, radius: number, speedX: number, speedY: number, color: string, targetRadius: number }[] = [];
     const numBlobs = 5;
 
-    function resizeCanvas() {
-        canvas.width = clientSection!.offsetWidth;
-        canvas.height = clientSection!.offsetHeight;
-        blobs = []; // Re-initialize blobs on resize
+    function resizeCanvasForLiquidGlass() {
+        if (!clientSection || !canvas || !ctx) return;
+        canvas.width = clientSection.offsetWidth;
+        canvas.height = clientSection.offsetHeight;
+        blobs = []; 
         for (let i = 0; i < numBlobs; i++) {
             const radius = Math.random() * (Math.min(canvas.width, canvas.height) / 4) + 50;
             blobs.push({
@@ -488,30 +492,26 @@ function initLiquidGlassEffect() {
                 targetRadius: radius,
                 speedX: (Math.random() - 0.5) * 0.3,
                 speedY: (Math.random() - 0.5) * 0.3,
-                color: i % 2 === 0 ? hexToRgba(accentColor, 0.05) : hexToRgba(bgColor, 0.1) // Alternating subtle colors
+                color: i % 2 === 0 ? hexToRgba(accentColor, 0.05) : hexToRgba(bgColor, 0.1)
             });
         }
     }
 
 
-    function animate() {
-        if (!ctx) return;
+    function animateLiquidGlass() {
+        if (!ctx || !canvas) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
-        // Apply a slight blur to the entire canvas for a softer, glassier look
         ctx.filter = 'blur(10px) brightness(1.1)';
-
 
         blobs.forEach(blob => {
             blob.x += blob.speedX;
             blob.y += blob.speedY;
 
-            // Animate radius for a more "breathing" effect
             blob.radius += (blob.targetRadius - blob.radius) * 0.02;
             if (Math.abs(blob.radius - blob.targetRadius) < 0.5) {
                 blob.targetRadius = Math.random() * (Math.min(canvas.width, canvas.height) / 3) + 40;
             }
-
 
             if (blob.x - blob.radius > canvas.width) blob.x = -blob.radius;
             if (blob.x + blob.radius < 0) blob.x = canvas.width + blob.radius;
@@ -520,7 +520,7 @@ function initLiquidGlassEffect() {
 
             const gradient = ctx.createRadialGradient(blob.x, blob.y, blob.radius * 0.1, blob.x, blob.y, blob.radius);
             gradient.addColorStop(0, blob.color);
-            gradient.addColorStop(1, hexToRgba(blob.color.startsWith('rgba(100, 255, 218') ? accentColor : bgColor, 0)); // Fade to transparent
+            gradient.addColorStop(1, hexToRgba(blob.color.startsWith('rgba(100, 255, 218') ? accentColor : bgColor, 0));
 
             ctx.fillStyle = gradient;
             ctx.beginPath();
@@ -528,19 +528,18 @@ function initLiquidGlassEffect() {
             ctx.fill();
         });
         
-        ctx.filter = 'none'; // Reset filter to avoid affecting other drawings if any
+        ctx.filter = 'none'; 
 
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animateLiquidGlass);
     }
 
-    resizeCanvas(); // Initial setup
-    animate();
+    resizeCanvasForLiquidGlass(); 
+    animateLiquidGlass();
 
-    // Debounced resize
-    let resizeTimeout: number;
+    let liquidGlassResizeDebounceTimer: number;
     window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = window.setTimeout(resizeCanvas, 100);
+        clearTimeout(liquidGlassResizeDebounceTimer);
+        liquidGlassResizeDebounceTimer = window.setTimeout(resizeCanvasForLiquidGlass, 100);
     });
 }
 
@@ -593,6 +592,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initHeroAnimation();
     initParticleBgAnimation();
-    initLiquidGlassEffect(); // Initialize the new effect
+    initLiquidGlassEffect(); 
     initScrollRevealAnimations();
 });

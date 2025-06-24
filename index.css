@@ -9,6 +9,7 @@
     --font-primary: 'Space Mono', monospace;
     --placeholder-bg: #2a2a2a;
     --whatsapp-green: #25D366;
+    --messenger-blue: #0084FF;
 }
 
 *,
@@ -213,9 +214,39 @@ section {
     animation-delay: 0.2s; 
 }
 
-.hero-name {
-    color: var(--accent-color);
+.hero-title-brand {
+    color: var(--hero-title-color); /* e.g., white */
+    font-family: var(--font-primary); /* Space Mono */
 }
+
+.hero-title-dev {
+    font-family: 'Audiowide', cursive;
+    color: var(--accent-color);
+    animation: flicker 2.5s infinite steps(1, end);
+    text-shadow: 0 0 2px rgba(100, 255, 218, 0.3),
+                 0 0 5px rgba(100, 255, 218, 0.2);
+    margin-left: -0.05em; /* Optical kerning adjust as needed */
+    position: relative; /* For fine-tuning position if needed */
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); }
+  5% { opacity: 0.6; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color); }
+  10% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); }
+  15% { opacity: 0.2; text-shadow: 0 0 2px var(--accent-color); }
+  20% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); }
+  30% { opacity: 0.7; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color); }
+  35% { opacity: 0.1; text-shadow: none; }
+  40% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); }
+  50% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); }
+  52% { opacity: 0.05; text-shadow: none; } 
+  54% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); } 
+  60% { opacity: 0.4; text-shadow: 0 0 2px var(--accent-color); }
+  65% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); }
+  80% { opacity: 0.3; text-shadow: 0 0 2px var(--accent-color); }
+  85% { opacity: 1; text-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color), 0 0 12px var(--accent-color); }
+}
+
 
 .hero-section .subtitle {
     font-size: clamp(1rem, 2.5vw, 1.1rem); /* Adjusted for Space Mono */
@@ -566,25 +597,6 @@ section {
     color: var(--bg-color);
 }
 
-.messenger-button {
-    background-color: #0084FF;
-    color: #fff;
-    border-color: #0084FF;
-}
-
-.messenger-button:hover {
-    background-color: #0073e0;
-    border-color: #0073e0;
-    color: #fff; /* Ensure text color remains white on hover */
-}
-
-.messenger-button .messenger-icon {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
-}
-
-
 /* Footer */
 .footer {
     text-align: center;
@@ -661,6 +673,52 @@ section {
 #contact h2.is-visible .underline-target::after {
     width: 100%;
     transition-delay: 0.5s; 
+}
+
+/* Messenger Floating Action Button */
+.messenger-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--messenger-blue);
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fab-pulse 2.5s infinite 3s; /* Pulse starts after 3s delay */
+}
+
+.messenger-fab i {
+    font-size: 24px; /* Adjusted icon size */
+    line-height: 1; /* Ensures icon is centered if it has intrinsic line-height */
+}
+
+.messenger-fab:hover {
+    transform: scale(1.1);
+    background-color: #0073e6; /* Slightly darker shade on hover */
+    animation-play-state: paused; /* Pause pulse on hover */
+}
+
+@keyframes fab-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
 }
 
 
@@ -827,6 +885,16 @@ section {
     .cta-button {
       min-width: 200px; /* Adjust min-width for smaller screens */
       padding: 0.65rem 1.25rem;
+    }
+
+    .messenger-fab {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .messenger-fab i {
+        font-size: 20px;
     }
 
 }

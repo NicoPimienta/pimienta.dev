@@ -45,7 +45,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="index.css">
     <script type="importmap">
     {
@@ -87,7 +88,6 @@
       }
     }
     </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <header class="header">
@@ -106,11 +106,11 @@
     </header>
 
     <main>
+        <canvas id="particle-bg-canvas"></canvas>
         <section id="hero" class="hero-section">
-            <canvas id="particle-bg-canvas"></canvas>
             <canvas id="hero-canvas"></canvas>
             <div class="hero-content">
-                <h1><span data-translate-key="heroGreeting">Hola, soy</span> <span class="hero-name">Nicolás Pimienta</span></h1>
+                <h1><span class="hero-title-brand">pimienta</span><span class="hero-title-dev">.dev</span></h1>
                 <p class="subtitle" data-translate-key="heroSubtitle">Diseñador y Desarrollador web creando experiencias minimalistas e impactantes.</p>
             </div>
         </section>
@@ -221,13 +221,9 @@ Trabajo con un enfoque limpio, funcional y orientado a la experiencia del usuari
         </section>
 
         <section id="contact" class="contact-section">
-            <h2 data-translate-key="contactTitle" class="animate-on-scroll"><span class="underline-target" data-translate-key-target="contactTitle">¿Interesado en colaborar?</span></h2>
+            <h2 data-translate-key="contactTitle" class="animate-on-scroll"><span class="underline-target" data-translate-key-target="contactTitle">Construyamos algo increíble.</span></h2>
             <div class="contact-buttons-container">
                 <a href="mailto:nicolaspimienta@gmail.com" class="cta-button animate-on-scroll" data-translate-key="contactButton">Enviame un Email</a>
-                <a href="https://m.me/61577040167777?ref=Hola%20quiero%20una%20web" target="_blank" rel="noopener noreferrer" class="cta-button messenger-button animate-on-scroll" data-translate-key-aria="contactButtonMessengerAria" aria-label="Escribime por Messenger">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 256 256.46999' xml:space='preserve'%3e%3cdefs%3e%3clinearGradient id='a' x1='50.040001' x2='201.35001' y1='240.28001' y2='24.32' gradientUnits='userSpaceOnUse'%3e%3cstop offset='0' stop-color='%230084ff'/%3e%3cstop offset='1' stop-color='%230ff'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath d='M128.23 0C57.41 0 0 53.69 0 120.07c0 37.02 18.06 69.45 46.42 90.47 2.23 1.68 3.55 4.35 3.55 7.21v38.72c0 4.9 5.37 8.16 9.77 5.92l42.66-21.64c2.25-1.14 4.81-1.42 7.18-.89 12.59 2.83 25.75 4.34 39.31 4.34 70.82 0 128.23-53.68 128.23-120.07S199.05 0 128.23 0z' fill='url(%23a)'/%3e%3cpath d='M68.04 158.39l25.68-30.93 42.13 25.17c3.19 1.9 7.21.32 7.97-3.32l28.16-67.06c.92-2.2-.42-4.69-2.73-5.59-16.14-6.28-36.25-10.4-58.42-10.4-24.96 0-47.58 4.79-66.72 12.82-2.58.91-3.6 3.99-2.07 6.27l24.4 35.84 41.69-25.01c3.19-1.9 7.21-.32 7.97 3.32l-19.98 47.53c-.91 2.2.42 4.69 2.73 5.59A169.898 169.898 0 0068.04 158.39z' fill='%23fff'/%3e%3c/svg%3e" alt="Messenger Logo" class="messenger-icon">
-                    <span data-translate-key="contactButtonMessengerText">Escribime por Messenger</span>
-                </a>
             </div>
         </section>
     </main>
@@ -240,10 +236,14 @@ Trabajo con un enfoque limpio, funcional y orientado a la experiencia del usuari
         <p data-translate-key="footerCopyright">&copy; 2025 Nicolás Pimienta. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5491123456789?text=%C2%A1Hola!%20%F0%9F%91%8B%20Me%20encontr%C3%A9%20con%20tu%20p%C3%A1gina%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20tus%20servicios.%20%C2%BFPodr%C3%ADas%20contarme%20un%20poco%3F%20Gracias%20%F0%9F%99%8C" target="_blank" style="position:fixed;bottom:20px;right:20px;background-color:#25D366;color:white;border-radius:50%;padding:15px;box-shadow:0 2px 5px rgba(0,0,0,0.3);z-index:1000;text-decoration:none;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:30px;height:30px;">
+    <a href="https://m.me/61577040167777?ref=Hola%20Nicolas%2C%20vi%20tu%20portfolio%20y%20quisiera%20contactarte." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="messenger-fab"
+       data-translate-key-aria="messengerFabAriaLabel" 
+       aria-label="Contactar por Messenger">
+      <i class="fab fa-facebook-messenger"></i>
     </a>
 
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>

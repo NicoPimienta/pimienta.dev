@@ -4,9 +4,9 @@ import * as THREE from 'three';
 // Language switching functionality
 const translations = {
     en: {
-        pageTitle: "Nicolás Pimienta - Portfolio",
-        metaDescription: "Explore the portfolio of Nicolás Pimienta, a Digital Designer & Developer specializing in minimalist and impactful web experiences. Discover services and selected projects.",
-        ogImageAlt: "Nicolás Pimienta's Portfolio - Digital Design and Development",
+        pageTitle: "pimienta.dev",
+        metaDescription: "Explore pimienta.dev, the portfolio of Nicolás Pimienta, a Digital Designer & Developer specializing in minimalist and impactful web experiences. Discover services and selected projects.",
+        ogImageAlt: "pimienta.dev - Digital Design and Development",
         navAbout: "About",
         navServices: "Services",
         navContact: "Contact",
@@ -45,12 +45,12 @@ const translations = {
         messengerFabAriaLabel: "Contact via Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
-        footerCopyright: "© 2025 Nicolás Pimienta. All rights reserved.",
+        footerCopyright: "© 2025 pimienta.dev. All rights reserved.",
     },
     es: {
-        pageTitle: "Nicolás Pimienta - Portafolio",
-        metaDescription: "Explora el portafolio de Nicolás Pimienta, Diseñador Digital y Desarrollador especializado en experiencias web minimalistas e impactantes. Descubre servicios y proyectos seleccionados.",
-        ogImageAlt: "Portafolio de Nicolás Pimienta - Diseño Digital y Desarrollo",
+        pageTitle: "pimienta.dev",
+        metaDescription: "Explora pimienta.dev, el portafolio de Nicolás Pimienta, un Diseñador Digital y Desarrollador especializado en experiencias web minimalistas e impactantes. Descubre servicios y proyectos seleccionados.",
+        ogImageAlt: "pimienta.dev - Diseño Digital y Desarrollo",
         navAbout: "Sobre mí",
         navServices: "Servicios",
         navContact: "Contacto",
@@ -89,7 +89,7 @@ const translations = {
         messengerFabAriaLabel: "Contactar por Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
-        footerCopyright: "© 2025 Nicolás Pimienta. Todos los derechos reservados.",
+        footerCopyright: "© 2025 pimienta.dev. Todos los derechos reservados.",
     }
 };
 

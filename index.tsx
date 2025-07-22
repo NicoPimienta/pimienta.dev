@@ -9,30 +9,37 @@ const translations = {
         ogImageAlt: "Nicolás Pimienta's Portfolio - Digital Design and Development",
         navAbout: "About",
         navServices: "Services",
-        navClients: "Clients", 
         navContact: "Contact",
         langSwitcherENLabel: "Switch to English",
         langSwitcherESLabel: "Switch to Spanish",
         heroSubtitle: "Digital Designer & Developer creating minimalist and impactful experiences.",
-        aboutTitle: "About Me",
+        aboutTitle: "About me",
         aboutMyName: "Nicolás Pimienta",
         aboutMyRole: "Digital Designer & Developer",
         aboutRoleDescription: ", with knowledge in web development and design, I offer the best projects resulting in quality work.",
         aboutParagraph: "I leverage my passion and skills to craft digital products and experiences. With a focus on clean aesthetics and intuitive design, I work with individuals and companies to bring their visions to life. I thrive on minimalist principles and brutalist honesty in design.",
         profileImageAlt: "Profile picture of Nicolás Pimienta",
         servicesTitle: "Services",
-        serviceWebPageTitle: "Web Page or App",
-        serviceWebPageDesc: "We develop custom digital solutions: from impactful and functional websites to intuitive mobile applications, designed to boost your brand and optimize your processes.",
+        serviceWebPageTitle: "Web page",
+        serviceWebPageDesc: "We develop custom digital solutions, creating impactful and functional websites designed to boost your brand, communicate your message, and optimize your online processes.",
         serviceOnlineStoreTitle: "Online Store",
         serviceOnlineStoreDesc: "Take your business to the digital world with an online store that offers your customers a convenient and secure shopping experience, allowing you to expand your reach and increase sales.",
         serviceNewsBlogTitle: "News Site & Blog",
         serviceNewsBlogDesc: "We create the platform, you control the content. We provide the perfect structure: from impactful headlines to fluid navigation. Your information source deserves a website that reflects its importance, and we provide the tools for you to manage it easily.",
-        clientsTitle: "Companies That Trusted Me",
+        technologiesTitle: "Technologies I use",
+        clientsTitle: "What my clients say",
+        client1Testimonial: "Nicolás captured the essence of our brand perfectly. The process was smooth, professional, and the results exceeded our expectations. Highly recommended!",
+        client2Testimonial: "Nicolás was able to interpret the energy of our project and translated it into a website that conveys peace and professionalism. Now our visitors can explore our holistic services in an intuitive and serene way.",
+        client3Testimonial: "Working with Nicolás was a great decision. He understood our needs for the hotel site and delivered a robust, elegant platform that our guests love.",
+        client4Testimonial: "The new website has greatly improved our online presence. It's fast, modern, and exactly what we needed to connect with our sports community.",
+        client5Testimonial: "From concept to launch, the professionalism was consistent. We now have a news portal that is easy to manage and visually appealing to our readers.",
+        client6Testimonial: "The minimalist and functional design he created for our guest house perfectly reflects our atmosphere. The feedback from customers has been extremely positive.",
         apaolazaLogoAlt: "Apaolaza & Asoc.",
         mandalaLogoAlt: "Alma Y Destino", 
         hotelDelSolarLogoAlt: "Hotel Del Solar",
         lanzaLaBolaLogoAlt: "Lanza la Bola Deportes",
         pehuajo365LogoAlt: "365 Pehuajó",
+        anaGhuestHouseLogoAlt: "Ana Ghuest House",
         contactTitle: "Let's build something great.",
         contactButton: "Send me an Email",
         messengerFabAriaLabel: "Contact via Messenger",
@@ -46,30 +53,37 @@ const translations = {
         ogImageAlt: "Portafolio de Nicolás Pimienta - Diseño Digital y Desarrollo",
         navAbout: "Sobre mí",
         navServices: "Servicios",
-        navClients: "Clientes", 
         navContact: "Contacto",
         langSwitcherENLabel: "Cambiar a Inglés",
         langSwitcherESLabel: "Cambiar a Español",
         heroSubtitle: "Diseñador Digital y Desarrollador creando experiencias minimalistas e impactantes.",
-        aboutTitle: "Sobre Mí",
+        aboutTitle: "Sobre mí",
         aboutMyName: "Nicolás Pimienta",
         aboutMyRole: "Diseñador Digital y Desarrollador",
         aboutRoleDescription: ", Combino diseño visual y desarrollo web para crear sitios atractivos, rápidos y adaptables a cualquier dispositivo. Me especializo en ayudar a marcas, profesionales y emprendimientos a destacar online con soluciones modernas y efectivas.",
         aboutParagraph: "Trabajo con un enfoque limpio, funcional y orientado a la experiencia del usuario. Escucho las necesidades de cada proyecto y transformo ideas en plataformas digitales claras, intuitivas y fáciles de navegar. Cada web que creo busca generar impacto y cumplir objetivos reales.",
         profileImageAlt: "Foto de perfil de Nicolás Pimienta",
         servicesTitle: "Servicios",
-        serviceWebPageTitle: "Página Web o App",
-        serviceWebPageDesc: "Desarrollamos soluciones digitales a medida: desde sitios web impactantes y funcionales hasta aplicaciones móviles intuitivas, diseñadas para potenciar tu marca y optimizar tus procesos.",
+        serviceWebPageTitle: "Página web",
+        serviceWebPageDesc: "Desarrollamos soluciones digitales a medida, creando sitios web impactantes y funcionales diseñados para potenciar tu marca, comunicar tu mensaje y optimizar tus procesos online.",
         serviceOnlineStoreTitle: "Tienda Online",
         serviceOnlineStoreDesc: "Llevá tu negocio al mundo digital con una tienda en línea que brinde a tus clientes una experiencia de compra conveniente y segura, permitiéndote ampliar tu alcance y aumentar tus ventas.",
         serviceNewsBlogTitle: "Sitio de Noticias & Blog",
         serviceNewsBlogDesc: "Creamos la plataforma, vos controlás el contenido. Te brindamos la estructura perfecta: desde titulares impactantes hasta una navegación fluida. Tu fuente de información se merece un sitio web que refleje su importancia y te brindamos las herramientas para que lo manejes con facilidad.",
-        clientsTitle: "Empresas que Confiaron en Mí",
+        technologiesTitle: "Tecnologías que utilizo",
+        clientsTitle: "Qué dicen mis clientes",
+        client1Testimonial: "Nicolás capturó la esencia de nuestra marca a la perfección. El proceso fue fluido, profesional y los resultados superaron nuestras expectativas. ¡Totalmente recomendado!",
+        client2Testimonial: "Nicolás supo interpretar la energía de nuestro proyecto y la tradujo en una web que transmite paz y profesionalismo. Ahora nuestros visitantes pueden explorar nuestros servicios holísticos de una manera intuitiva y serena.",
+        client3Testimonial: "Trabajar con Nicolás fue una gran decisión. Entendió nuestras necesidades para el sitio del hotel y entregó una plataforma robusta y elegante que nuestros huéspedes adoran.",
+        client4Testimonial: "El nuevo sitio web ha mejorado enormemente nuestra presencia online. Es rápido, moderno y exactamente lo que necesitábamos para conectar con nuestra comunidad deportiva.",
+        client5Testimonial: "Desde el concepto hasta el lanzamiento, el profesionalismo fue constante. Ahora tenemos un portal de noticias que es fácil de gestionar y visualmente atractivo para nuestros lectores.",
+        client6Testimonial: "El diseño minimalista y funcional que creó para nuestro guest house refleja perfectamente nuestro ambiente. El feedback de los clientes ha sido sumamente positivo.",
         apaolazaLogoAlt: "Apaolaza & Asoc.",
         mandalaLogoAlt: "Alma Y Destino", 
         hotelDelSolarLogoAlt: "Hotel Del Solar",
         lanzaLaBolaLogoAlt: "Lanza la Bola Deportes",
         pehuajo365LogoAlt: "365 Pehuajó",
+        anaGhuestHouseLogoAlt: "Ana Ghuest House",
         contactTitle: "Construyamos algo increíble.",
         contactButton: "Enviame un Email",
         messengerFabAriaLabel: "Contactar por Messenger",
@@ -447,103 +461,6 @@ function initParticleBgAnimation() {
 }
 
 
-function initLiquidGlassEffect() {
-    const canvas = document.getElementById('liquid-glass-canvas') as HTMLCanvasElement;
-    if (!canvas) {
-        console.warn("Liquid glass canvas not found, skipping effect.");
-        return;
-    }
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-        console.error("Could not get 2D context for liquid glass canvas");
-        return;
-    }
-
-    const clientSection = document.getElementById('clients');
-    if (!clientSection) {
-        console.error("Client section not found for liquid glass effect.");
-        return;
-    }
-    
-    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim() || '#64FFDA';
-    const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim() || '#121212';
-
-    function hexToRgba(hex: string, alpha: number): string {
-        const r = parseInt(hex.slice(1, 3), 16);
-        const g = parseInt(hex.slice(3, 5), 16);
-        const b = parseInt(hex.slice(5, 7), 16);
-        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-    }
-
-    let blobs: { x: number, y: number, radius: number, speedX: number, speedY: number, color: string, targetRadius: number }[] = [];
-    const numBlobs = 5;
-
-    function resizeCanvasForLiquidGlass() {
-        if (!clientSection || !canvas || !ctx) return;
-        canvas.width = clientSection.offsetWidth;
-        canvas.height = clientSection.offsetHeight;
-        blobs = []; 
-        for (let i = 0; i < numBlobs; i++) {
-            const radius = Math.random() * (Math.min(canvas.width, canvas.height) / 4) + 50;
-            blobs.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: radius,
-                targetRadius: radius,
-                speedX: (Math.random() - 0.5) * 0.3,
-                speedY: (Math.random() - 0.5) * 0.3,
-                color: i % 2 === 0 ? hexToRgba(accentColor, 0.05) : hexToRgba(bgColor, 0.1)
-            });
-        }
-    }
-
-
-    function animateLiquidGlass() {
-        if (!ctx || !canvas) return;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.filter = 'blur(10px) brightness(1.1)';
-
-        blobs.forEach(blob => {
-            blob.x += blob.speedX;
-            blob.y += blob.speedY;
-
-            blob.radius += (blob.targetRadius - blob.radius) * 0.02;
-            if (Math.abs(blob.radius - blob.targetRadius) < 0.5) {
-                blob.targetRadius = Math.random() * (Math.min(canvas.width, canvas.height) / 3) + 40;
-            }
-
-            if (blob.x - blob.radius > canvas.width) blob.x = -blob.radius;
-            if (blob.x + blob.radius < 0) blob.x = canvas.width + blob.radius;
-            if (blob.y - blob.radius > canvas.height) blob.y = -blob.radius;
-            if (blob.y + blob.radius < 0) blob.y = canvas.height + blob.radius;
-
-            const gradient = ctx.createRadialGradient(blob.x, blob.y, blob.radius * 0.1, blob.x, blob.y, blob.radius);
-            gradient.addColorStop(0, blob.color);
-            gradient.addColorStop(1, hexToRgba(blob.color.startsWith('rgba(100, 255, 218') ? accentColor : bgColor, 0));
-
-            ctx.fillStyle = gradient;
-            ctx.beginPath();
-            ctx.arc(blob.x, blob.y, blob.radius, 0, Math.PI * 2);
-            ctx.fill();
-        });
-        
-        ctx.filter = 'none'; 
-
-        requestAnimationFrame(animateLiquidGlass);
-    }
-
-    resizeCanvasForLiquidGlass(); 
-    animateLiquidGlass();
-
-    let liquidGlassResizeDebounceTimer: number;
-    window.addEventListener('resize', () => {
-        clearTimeout(liquidGlassResizeDebounceTimer);
-        liquidGlassResizeDebounceTimer = window.setTimeout(resizeCanvasForLiquidGlass, 100);
-    });
-}
-
-
 function initScrollRevealAnimations() {
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     if (!elementsToAnimate.length) return;
@@ -562,7 +479,7 @@ function initScrollRevealAnimations() {
                     const h2 = entry.target.querySelector('h2');
                     if (h2) h2.classList.add('is-visible'); 
                 }
-                if (entry.target.tagName === 'H2') {
+                if (entry.target.tagName === 'H2' || entry.target.tagName === 'H3') {
                      entry.target.classList.add('is-visible');
                 }
                 observer.unobserve(entry.target); 
@@ -573,6 +490,66 @@ function initScrollRevealAnimations() {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     elementsToAnimate.forEach(el => observer.observe(el));
 }
+
+function initTestimonialSlider() {
+    const sliderContainer = document.querySelector('.testimonial-slider-container') as HTMLElement;
+    const slider = document.querySelector('.testimonial-slider') as HTMLElement;
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.querySelector('.slider-dots');
+    
+    if (!slider || !cards.length || !dotsContainer || !sliderContainer) {
+        console.warn("Testimonial slider elements not found, skipping initialization.");
+        return;
+    }
+
+    let currentIndex = 0;
+    let slideInterval: number;
+
+    // Create dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('dot');
+        dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+        if (index === 0) dot.classList.add('active');
+        
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetInterval();
+        });
+        dotsContainer.appendChild(dot);
+    });
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function showSlide(index: number) {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
+        currentIndex = index;
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentIndex + 1) % cards.length;
+        showSlide(nextIndex);
+    }
+
+    function startInterval() {
+        clearInterval(slideInterval); // Clear any existing interval
+        slideInterval = window.setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+    }
+    
+    sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    sliderContainer.addEventListener('mouseleave', startInterval);
+
+    startInterval();
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const langLinks = document.querySelectorAll('.lang-link');
@@ -592,6 +569,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initHeroAnimation();
     initParticleBgAnimation();
-    initLiquidGlassEffect(); 
     initScrollRevealAnimations();
+    initTestimonialSlider();
 });

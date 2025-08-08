@@ -8,6 +8,7 @@ const translations = {
         metaDescription: "Explore pimienta.dev, the portfolio of Nicolás Pimienta, a Digital Designer & Developer specializing in minimalist and impactful web experiences. Discover services and selected projects.",
         ogImageAlt: "pimienta.dev - Digital Design and Development",
         navAbout: "About",
+        navProjects: "Projects",
         navServices: "Services",
         navContact: "Contact",
         langSwitcherENLabel: "Switch to English",
@@ -19,6 +20,19 @@ const translations = {
         aboutRoleDescription: ", with knowledge in web development and design, I offer the best projects resulting in quality work.",
         aboutParagraph: "I leverage my passion and skills to craft digital products and experiences. With a focus on clean aesthetics and intuitive design, I work with individuals and companies to bring their visions to life. I thrive on minimalist principles and brutalist honesty in design.",
         profileImageAlt: "Profile picture of Nicolás Pimienta",
+        projectsTitle: "Projects",
+        projectsDesc1: "Below is a selection of my work, ranging from custom web applications to powerful sites built on WordPress.",
+        filterCode: "Code",
+        filterWordPress: "WordPress",
+        categoryCode: "Code",
+        categoryWordPress: "WordPress",
+        apaolazaTitle: "Estudio Apaolaza",
+        almaDestinoTitle: "Alma y Destino",
+        lanzaLaBolaTitle: "Lanza la Bola Deportes",
+        hotelDelSolarTitle: "Hotel Del Solar",
+        pehuajo365Title: "365 Pehuajó",
+        anaGhuestHouseTitle: "Ana Ghuest House",
+        viewProjectLink: "View Project →",
         servicesTitle: "Services",
         serviceWebPageTitle: "Web page",
         serviceWebPageDesc: "We develop custom digital solutions, creating impactful and functional websites designed to boost your brand, communicate your message, and optimize your online processes.",
@@ -41,7 +55,13 @@ const translations = {
         pehuajo365LogoAlt: "365 Pehuajó",
         anaGhuestHouseLogoAlt: "Ana Ghuest House",
         contactTitle: "Let's build something great.",
-        contactButton: "Send me an Email",
+        contactFormNameLabel: "Name",
+        contactFormNamePlaceholder: "Your Full Name",
+        contactFormEmailLabel: "Email",
+        contactFormEmailPlaceholder: "your.email@example.com",
+        contactFormMessageLabel: "Message",
+        contactFormMessagePlaceholder: "Hi, I'd like to talk about...",
+        contactFormSubmitButton: "Send Message",
         messengerFabAriaLabel: "Contact via Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
@@ -52,6 +72,7 @@ const translations = {
         metaDescription: "Explora pimienta.dev, el portafolio de Nicolás Pimienta, un Diseñador Digital y Desarrollador especializado en experiencias web minimalistas e impactantes. Descubre servicios y proyectos seleccionados.",
         ogImageAlt: "pimienta.dev - Diseño Digital y Desarrollo",
         navAbout: "Sobre mí",
+        navProjects: "Proyectos",
         navServices: "Servicios",
         navContact: "Contacto",
         langSwitcherENLabel: "Cambiar a Inglés",
@@ -63,6 +84,19 @@ const translations = {
         aboutRoleDescription: ", Combino diseño visual y desarrollo web para crear sitios atractivos, rápidos y adaptables a cualquier dispositivo. Me especializo en ayudar a marcas, profesionales y emprendimientos a destacar online con soluciones modernas y efectivas.",
         aboutParagraph: "Trabajo con un enfoque limpio, funcional y orientado a la experiencia del usuario. Escucho las necesidades de cada proyecto y transformo ideas en plataformas digitales claras, intuitivas y fáciles de navegar. Cada web que creo busca generar impacto y cumplir objetivos reales.",
         profileImageAlt: "Foto de perfil de Nicolás Pimienta",
+        projectsTitle: "Proyectos",
+        projectsDesc1: "A continuación, una selección de mis trabajos, que abarca desde aplicaciones web personalizadas hasta sitios potentes en WordPress.",
+        filterCode: "Código",
+        filterWordPress: "WordPress",
+        categoryCode: "Código",
+        categoryWordPress: "WordPress",
+        apaolazaTitle: "Estudio Apaolaza",
+        almaDestinoTitle: "Alma y Destino",
+        lanzaLaBolaTitle: "Lanza la Bola Deportes",
+        hotelDelSolarTitle: "Hotel Del Solar",
+        pehuajo365Title: "365 Pehuajó",
+        anaGhuestHouseTitle: "Ana Ghuest House",
+        viewProjectLink: "Ver Proyecto →",
         servicesTitle: "Servicios",
         serviceWebPageTitle: "Página web",
         serviceWebPageDesc: "Desarrollamos soluciones digitales a medida, creando sitios web impactantes y funcionales diseñados para potenciar tu marca, comunicar tu mensaje y optimizar tus procesos online.",
@@ -85,7 +119,13 @@ const translations = {
         pehuajo365LogoAlt: "365 Pehuajó",
         anaGhuestHouseLogoAlt: "Ana Ghuest House",
         contactTitle: "Construyamos algo increíble.",
-        contactButton: "Enviame un Email",
+        contactFormNameLabel: "Nombre",
+        contactFormNamePlaceholder: "Tu Nombre Completo",
+        contactFormEmailLabel: "Email",
+        contactFormEmailPlaceholder: "tu.email@ejemplo.com",
+        contactFormMessageLabel: "Mensaje",
+        contactFormMessagePlaceholder: "Hola, me gustaría hablar sobre...",
+        contactFormSubmitButton: "Enviar Mensaje",
         messengerFabAriaLabel: "Contactar por Messenger",
         footerSocialFacebookLabel: "Facebook",
         footerSocialInstagramLabel: "Instagram",
@@ -113,7 +153,7 @@ function switchLanguage(lang: Language) {
             } else { // General case for elements like simple spans or buttons directly holding text
                 // Check if the element is a span or if it's okay to set textContent directly
                 // For example, an <a> tag with data-translate-key for its main text
-                 if (element.tagName === 'SPAN' || element.tagName === 'A' || element.tagName === 'P' || element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'BUTTON') {
+                 if (element.tagName === 'SPAN' || element.tagName === 'A' || element.tagName === 'P' || element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'BUTTON' || element.tagName === 'LABEL') {
                     element.textContent = currentTranslations[key];
                 }
             }
@@ -152,6 +192,14 @@ function switchLanguage(lang: Language) {
         const key = element.getAttribute('data-translate-key-alt') as TranslationKey;
         if (key && currentTranslations[key]) {
             element.setAttribute('alt', currentTranslations[key]);
+        }
+    });
+
+    // Update placeholder attributes
+    document.querySelectorAll('[data-translate-key-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-translate-key-placeholder') as TranslationKey;
+        if (key && currentTranslations[key]) {
+            element.setAttribute('placeholder', currentTranslations[key]);
         }
     });
 
@@ -550,6 +598,63 @@ function initTestimonialSlider() {
     startInterval();
 }
 
+function initProjectFilters() {
+    const filterContainer = document.querySelector('.project-filters');
+    const projectItems = document.querySelectorAll('.project-item') as NodeListOf<HTMLElement>;
+    const filterButtons = document.querySelectorAll('.project-filters button') as NodeListOf<HTMLButtonElement>;
+
+    if (!filterContainer || !projectItems.length || !filterButtons.length) {
+        console.warn('Project filter elements not found, skipping initialization.');
+        return;
+    }
+
+    const filterProjects = (filter: string | undefined) => {
+        if (!filter) return;
+
+        projectItems.forEach(item => {
+            const category = item.dataset.category;
+            const matchesFilter = (filter === category);
+
+            if (matchesFilter) {
+                item.classList.remove('hidden');
+                item.style.display = 'flex';
+            } else {
+                item.classList.add('hidden');
+                setTimeout(() => {
+                    if (item.classList.contains('hidden')) {
+                        item.style.display = 'none';
+                    }
+                }, 400);
+            }
+        });
+    };
+    
+    // Set default filter on page load
+    const defaultButton = filterButtons[0];
+    if (defaultButton) {
+        defaultButton.classList.add('active');
+        const defaultFilter = defaultButton.dataset.filter;
+        filterProjects(defaultFilter);
+    }
+
+
+    filterContainer.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const button = target.closest('button');
+
+        if (!button) return;
+        
+        // Prevent re-filtering if the active button is clicked again
+        if (button.classList.contains('active')) return;
+
+        filterContainer.querySelector('button.active')?.classList.remove('active');
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+        filterProjects(filter);
+    });
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const langLinks = document.querySelectorAll('.lang-link');
@@ -571,4 +676,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticleBgAnimation();
     initScrollRevealAnimations();
     initTestimonialSlider();
+    initProjectFilters();
 });

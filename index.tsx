@@ -82,7 +82,7 @@ const translations = {
         aboutMyName: "Nicolás Pimienta",
         aboutMyRole: "Diseñador Digital y Desarrollador",
         aboutRoleDescription: ", Combino diseño visual y desarrollo web para crear sitios atractivos, rápidos y adaptables a cualquier dispositivo. Me especializo en ayudar a marcas, profesionales y emprendimientos a destacar online con soluciones modernas y efectivas.",
-        aboutParagraph: "Trabajo con un enfoque limpio, funcional y orientado a la experiencia del usuario. Escucho las necesidades de cada proyecto y transformo ideas en plataformas digitales claras, intuitivas y fáciles de navegar. Cada web que creo busca generar impacto y cumplir objetivos reales.",
+        aboutParagraph: "Trabajo con un enfoque limpio, funcional y orientado a la experiencia del usuario. Escucho las necesidades de cada proyecto y transformo ideas en plataformas claras, intuitivas y fáciles de navegar para generar impacto y cumplir objetivos reales. Además, acompaño la entrega con videos y sesiones prácticas para que puedas gestionar el CMS con autonomía (publicar en el blog, actualizar productos o páginas y revisar formularios) sin depender de terceros.",
         profileImageAlt: "Foto de perfil de Nicolás Pimienta",
         projectsTitle: "Proyectos",
         projectsDesc1: "A continuación, una selección de mis trabajos, que abarca desde aplicaciones web personalizadas hasta sitios potentes en WordPress.",
